@@ -6,7 +6,7 @@ $email=$_POST["email"];
 $pass=$_POST["password"];
 $repass=$_POST["repassword"];
 $conn=mysqli_connect("localhost","root","","pars novin db");
-$reslut=mysqli_query($conn,"INSERT INTO `pars novin table`(`name`, `family`, `email`, `pass`, `repass`) VALUES ('$name','$family','$email','$pass','$repass');");
+$reslut=mysqli_query($conn,"INSERT INTO `table`(`name`, `family`, `email`, `password`, `repassword`) VALUES ('$name','$family','$email','$pass','$repass');");
 mysqli_close($conn);
 if($reslut==true){
 ?>

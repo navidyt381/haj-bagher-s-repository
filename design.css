@@ -32,3 +32,12 @@ h1, h2 {
 footer {
     margin-top: auto;
 }
+.btn-success {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
