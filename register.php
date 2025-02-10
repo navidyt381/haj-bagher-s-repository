@@ -1,5 +1,5 @@
 <?php
-include("up.html");
+include("up.php");
 ?>
 
     <main class="container my-5">

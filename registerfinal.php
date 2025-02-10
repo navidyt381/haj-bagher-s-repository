@@ -1,5 +1,5 @@
 <?php
-include("up.html");
+include("up.php");
 $name=$_POST["firstname"];
 $family=$_POST["lastname"];
 $email=$_POST["email"];

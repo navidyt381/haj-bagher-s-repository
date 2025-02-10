@@ -1,5 +1,5 @@
 <?php
-include("up.html");
+include("up.php");
 ?>
     <main class="container my-4">
         <h2 class="text-center mb-5">به سایت نوین پارس خوش آمدید</h2>
