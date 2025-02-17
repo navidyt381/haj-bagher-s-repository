@@ -10,7 +10,8 @@ $reslut=mysqli_query($conn,"INSERT INTO `table`(`name`, `family`, `email`, `pass
 mysqli_close($conn);
 if($reslut==true){
 ?>
-<p>ثبت نام با موفقیت انجام شد.</p>
+<p class="backing">ثبت نام با موفقیت انجام شد.</p>
+<a class="backing" href="index.php"><button class="btn btn-primary mt-3">بازگشت به صفحه اصلی</button></a>
 <?php
 }else{
 ?>
