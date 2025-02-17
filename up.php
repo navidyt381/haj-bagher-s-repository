@@ -26,7 +26,7 @@ session_start();
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav" dir="rtl">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">خانه</a>
+                        <a class="nav-link active" href="index.php">محصولات</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">درباره ما</a>
@@ -47,6 +47,12 @@ session_start();
                     <?php } else {?>
                         <li class="nav-item">
                         <a class="nav-link" href="login.php">ورود</a>
+                    </li>
+                    <?php }?>
+                    </li>
+                    <?php if(isset($_SESSION["login"])){?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adminpanel.php">پنل ادمین</a>
                     </li>
                     <?php }?>
                 </ul>
