@@ -15,6 +15,9 @@ $result = mysqli_query($connect, "SELECT * FROM products");
             ?>
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100">
+                    <?php if(!empty($row['image'])) { ?>
+                    <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="تصویر محصول">
+                    <?php } ?>
                     <div class="card-body text-center">
                         <h5 class="card-title"><?php echo $row['title']; ?></h5>
                         <p class="card-text text-success"><?php echo $row['price']; ?> تومان</p> 
@@ -28,8 +31,6 @@ $result = mysqli_query($connect, "SELECT * FROM products");
             mysqli_close($connect);
             ?>
         </div>
-
-
     </main>
 <?php
 include("down.html");

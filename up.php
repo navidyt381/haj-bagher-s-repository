@@ -45,11 +45,10 @@ session_start();
                         <a class="nav-link" href="logout.php">خروج</a>
                     </li>
                     <?php } else {?>
-                        <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="login.php">ورود</a>
                     </li>
                     <?php }?>
-                    </li>
                     <?php if(isset($_SESSION["login"])){?>
                     <li class="nav-item">
                         <a class="nav-link" href="adminpanel.php">پنل ادمین</a>
