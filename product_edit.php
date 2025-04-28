@@ -1,6 +1,25 @@
 <?php
 include("up.php");
 
+$isAdmin = false;
+if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+    $connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
+    if ($connect) {
+        $query = "SELECT admin FROM users WHERE name='$username'";
+        $result = mysqli_query($connect, $query);
+        if ($result && $row = mysqli_fetch_array($result)) {
+            if ($row["admin"] == 1) {
+                $isAdmin = true;
+            }
+        }
+        mysqli_close($connect);
+    }
+}
+if  ($isAdmin==false) {
+?>
+<script>location.replace("index.php");</script>
+<?php } 
 $id = $_GET["id"];
 $connect = mysqli_connect("localhost", "root", "", "parsnovindb");
 $result = mysqli_query($connect, "SELECT * FROM products WHERE id='$id'");

@@ -11,7 +11,7 @@ include("up.php");
             <label for="password" class="form-label">کلمه عبور</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="کلمه عبور">
         </div>
-        <button type="submit" class="btn btn-success">ثبت نام</button>
+        <button type="submit" class="btn btn-success">ورود</button>
         <p class="text-center mt-3">
             <a href="register.php" class="btn btn-link">یکی بسازید</a> حساب کاربری ندارید؟ 
         </p>

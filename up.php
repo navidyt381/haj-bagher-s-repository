@@ -4,7 +4,7 @@ session_start();
 $isAdmin = false;
 if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
-    $connect = mysqli_connect("localhost", "root", "", "parsnovindb");
+    $connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
     if ($connect) {
         $query = "SELECT admin FROM users WHERE name='$username'";
         $result = mysqli_query($connect, $query);
@@ -40,14 +40,14 @@ if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav" dir="rtl">
+                <li class="nav-item">
+                        <a class="nav-link" href="index.php">محصولات</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">محصولات</a>
+                        <a class="nav-link" href="cart.php">سبد خرید</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about_us.php">درباره ما</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="buy.php">خرید</a>
                     </li>
                     <?php if (isset($_SESSION["login"])) { ?>
                         <li class="nav-item">

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 07, 2025 at 07:40 PM
--- Server version: 9.1.0
--- PHP Version: 8.3.14
+-- Generation Time: Apr 28, 2025 at 05:35 PM
+-- Server version: 8.3.0
+-- PHP Version: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,15 @@ CREATE TABLE IF NOT EXISTS `products` (
   `image` varchar(3000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `id` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`title`, `price`, `image`, `id`) VALUES
+('سیب', '١٢٠٠٠٠', 'images/downlappleoad.jpg', 8),
+('ماگ خمینی', '٢٠٠٠٠٠', 'images/download (3).jpg', 12);
 
 -- --------------------------------------------------------
 
@@ -59,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`name`, `family`, `email`, `password`, `repassword`, `id`, `admin`) VALUES
-('نوید', 'طاهری', 'hajbagher@gmail.com', '1234', '1234', 4, 1),
-('باقر', 'تیتانیوم', 'elhamnasyran575986@gmail.com', '1234', '1234', 5, 0),
+('نوید', 'طاهری', 'hajbagher@gmail.com', '1234', '1234', 4, 0),
+('باقر', 'تیتانیوم', 'elhamnasyran575986@gmail.com', '1234', '1234', 5, 1),
 ('عبدالله', 'احمدی', 'eraiser.com@gmail.com', '1234', '1234', 6, 0);
 COMMIT;
 

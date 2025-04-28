@@ -5,13 +5,11 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
     $name = $_POST["name"];
     $password = $_POST["password"];
 
-    // اتصال به دیتابیس
-    $link = mysqli_connect("localhost", "root", "", "parsnovindb");
+    $link = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
     if (!$link) {
         die("خطا در اتصال به دیتابیس: " . mysqli_connect_error());
     }
 
-    // استفاده از ورودی‌ها بدون پاکسازی
     $query = "SELECT `name`, `password` FROM `users` WHERE `name`='$name' AND `password`='$password' LIMIT 1";
     $result = mysqli_query($link, $query);
     mysqli_close($link);
@@ -31,6 +29,6 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
     echo "<p>لطفاً نام کاربری و رمز عبور را وارد کنید</p>";
 }
 $_SESSION["login"] = true;
-$_SESSION["username"] = $name; // نام کاربری که وارد شده
+$_SESSION["username"] = $name;
 include("down.html");
 ?>

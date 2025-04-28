@@ -1,7 +1,7 @@
 <?php
 include("up.php");
 
-$connect = mysqli_connect("localhost", "root", "", "parsnovindb");
+$connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
 $result = mysqli_query($connect, "SELECT * FROM products");
 ?>
     <main class="container my-4">
@@ -12,17 +12,18 @@ $result = mysqli_query($connect, "SELECT * FROM products");
             while ($row = mysqli_fetch_array($result)) {
             ?>
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <?php if(!empty($row['image'])) { ?>
-                    <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="تصویر محصول">
-                    <?php } ?>
-                    <div class="card-body text-center">
-                        <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                        <p class="card-text text-success"><?php echo $row['price']; ?> </p>
-                        <p class="card-text text-success">تومان</p>   
-                    </div>
-                </div>
-            </div>
+        <div class="card h-100">
+    <?php if (!empty($row['image'])) { ?>
+        <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="تصویر محصول">
+    <?php } ?>
+    <div class="card-body text-center">
+        <h5 class="card-title"><?php echo $row['title']; ?></h5>
+        <p class="card-text text-success"><?php echo $row['price']; ?> تومان</p> 
+        <!-- دکمه افزودن به سبد خرید -->
+        <a href="add_to_cart.php?id=<?php echo $row['id']; ?>" class="btn btn-success">افزودن به سبد خرید</a>
+    </div>
+ </div>
+</div>
             <?php
             }
             mysqli_close($connect);

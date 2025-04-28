@@ -4,7 +4,7 @@ include("up.php");
 $isAdmin = false;
 if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
-    $connect = mysqli_connect("localhost", "root", "", "parsnovindb");
+    $connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
     if ($connect) {
         $query = "SELECT admin FROM users WHERE name='$username'";
         $result = mysqli_query($connect, $query);
@@ -16,10 +16,12 @@ if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
         mysqli_close($connect);
     }
 }
-$connect = mysqli_connect("localhost", "root", "", "parsnovindb");
+$connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
 $result = mysqli_query($connect, "SELECT * FROM products");
-if  ($isAdmin==false)
+if  ($isAdmin==false) {
 ?>
+<script>location.replace("index.php");</script>
+<?php } ?>
     <main class="container my-4">
         <h2 class="text-center mb-5">پنل ادمین</h2>
 
