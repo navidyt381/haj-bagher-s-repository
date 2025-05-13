@@ -3,7 +3,7 @@ include("up.php");
 
 if (isset($_GET['id'])) {
     $product_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
+    $connect = mysqli_connect("localhost", "root", "", "parsnovindb");
     if (!$connect) {
         die("خطا در اتصال به دیتابیس: " . mysqli_connect_error());
     }

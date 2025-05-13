@@ -4,7 +4,7 @@ include("up.php");
 $isAdmin = false;
 if (isset($_SESSION["login"]) && isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
-    $connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
+    $connect = mysqli_connect("localhost", "root", "", "parsnovindb");
     if ($connect) {
         $query = "SELECT admin FROM users WHERE name='$username'";
         $result = mysqli_query($connect, $query);

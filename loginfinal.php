@@ -5,7 +5,7 @@ if (isset($_POST["name"]) && isset($_POST["password"])) {
     $name = $_POST["name"];
     $password = $_POST["password"];
 
-    $link = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
+    $link = mysqli_connect("localhost", "root", "", "parsnovindb");
     if (!$link) {
         die("خطا در اتصال به دیتابیس: " . mysqli_connect_error());
     }

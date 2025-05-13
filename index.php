@@ -1,7 +1,7 @@
 <?php
 include("up.php");
 
-$connect = mysqli_connect("localhost", "hajbag_root", "Nn123456*", "hajbag_parsnovindb");
+$connect = mysqli_connect("localhost", "root", "", "parsnovindb");
 $result = mysqli_query($connect, "SELECT * FROM products");
 ?>
     <main class="container my-4">
